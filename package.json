@@ -1,6 +1,6 @@
 {
   "name": "directory-entry-deduplicator",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Resolves duplicate directory entries caused by conflicting Unicode normalization between HFS+ and APFS volumes",
   "type": "module",
   "main": "src/index.js",
