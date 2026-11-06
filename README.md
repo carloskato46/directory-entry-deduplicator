@@ -49,3 +49,10 @@ The trade-off: we compare using NFC only, not NFKC. NFC catches every case arisi
 - `MergeConflict` — `Error` subclass thrown by `mergeGroup`.
 
 An `Entry` is any object with a string `name`; optional `size` (number) and `mtime` (number, milliseconds) are recognized by `mergeGroup`.
+
+## Design notes
+
+The window stores values eagerly rather than keeping running aggregates. Running
+sums drift with floating point over long streams, and recomputing from a small
+buffer is cheap enough that the drift is not worth the speed.
+
